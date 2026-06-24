@@ -24,7 +24,7 @@ _REVIEW_STYLES = {
 }
 
 
-def _ratio_style(approved: int, pool: int) -> str:
+def ratio_style(approved: int, pool: int) -> str:
     """Pick a color for the approval ratio cell."""
     if pool == 0:
         return "dim"
@@ -33,6 +33,11 @@ def _ratio_style(approved: int, pool: int) -> str:
     if approved < pool:
         return "yellow"
     return "green"
+
+
+def review_style(label: str) -> str:
+    """Pick a color for a my-review label."""
+    return _REVIEW_STYLES.get(label, "")
 
 
 def build_table(prs: list[PullRequest], reviewer: str) -> Table:
@@ -58,8 +63,8 @@ def build_table(prs: list[PullRequest], reviewer: str) -> Table:
             Text(f"#{pr.number}", style="bold"),
             Text(pr.author_login),
             Text(pr.created_at[:10]),
-            Text(f"{approved}/{pool}", style=_ratio_style(approved, pool)),
-            Text(label, style=_REVIEW_STYLES.get(label, "")),
+            Text(f"{approved}/{pool}", style=ratio_style(approved, pool)),
+            Text(label, style=review_style(label)),
             title_cell,
         )
     return table

@@ -64,8 +64,10 @@ def main(
     prs.sort(key=lambda pr: pr.created_at, reverse=True)
 
     if tui:
-        err.print(Text("TUI mode is not implemented yet (Milestone 7).", style="yellow"))
-        raise typer.Exit(code=1)
+        from cubrid_dev2_pr.tui.app import run_tui
+
+        run_tui(prs, repo_v, reviewer_v)
+        return
 
     header = f"Open PRs in {repo_v} from configured teammates — reviewer: {reviewer_v}"
     if not drafts:
