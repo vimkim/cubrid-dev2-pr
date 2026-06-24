@@ -32,6 +32,7 @@ def test_render_includes_pr_rows() -> None:
     assert "1/5" in out  # approval ratio
     assert "APPROVED" in out  # vimkim's review label on #5001
     assert "overflow" in out  # part of the PR title
+    assert "pull/5001" in out  # raw URL on its own line under the title
 
 
 def test_render_marks_draft_titles() -> None:
