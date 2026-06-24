@@ -28,6 +28,7 @@ class PrListApp(App[None]):
         self._repo = repo
         self._reviewer = reviewer
         self._by_key: dict[str, PullRequest] = {str(pr.number): pr for pr in prs}
+        self._body_cache: dict[int, str] = {}
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -61,7 +62,7 @@ class PrListApp(App[None]):
             return
         pr = self._by_key.get(key)
         if pr is not None:
-            self.push_screen(DetailScreen(pr, self._repo, self._reviewer))
+            self.push_screen(DetailScreen(pr, self._repo, self._reviewer, self._body_cache))
 
 
 def run_tui(prs: list[PullRequest], repo: str, reviewer: str) -> None:

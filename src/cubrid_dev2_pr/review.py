@@ -46,6 +46,27 @@ def approval_stats(pr: PullRequest) -> tuple[int, int]:
     return len(approved), len(pool)
 
 
+def reviewer_groups(pr: PullRequest) -> dict[str, list[str]]:
+    """Group every reviewer by current status for the detail view.
+
+    Keys: ``approved``, ``changes_requested``, ``commented`` (any other review
+    state), and ``awaiting`` (requested reviewers with no review yet). Each list
+    is sorted; bots and non-teammates are included.
+    """
+    latest = latest_reviews_by_author(pr)
+    requested = {req.name for req in pr.review_requests}
+    return {
+        "approved": sorted(login for login, rev in latest.items() if rev.state == APPROVED),
+        "changes_requested": sorted(
+            login for login, rev in latest.items() if rev.state == CHANGES_REQUESTED
+        ),
+        "commented": sorted(
+            login for login, rev in latest.items() if rev.state not in (APPROVED, CHANGES_REQUESTED)
+        ),
+        "awaiting": sorted(name for name in requested if name not in latest),
+    }
+
+
 def review_label(pr: PullRequest, reviewer: str) -> str:
     """Return the configured reviewer's my-review label.
 

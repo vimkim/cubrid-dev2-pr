@@ -93,6 +93,24 @@ def test_empty_pr_is_zero_over_zero() -> None:
     assert review.approval_stats(_pr()) == (0, 0)
 
 
+def test_reviewer_groups_partition() -> None:
+    pr = _pr(
+        latest_reviews=[
+            Review("alice", "APPROVED", "2026-01-01T00:00:00Z"),
+            Review("bob", "CHANGES_REQUESTED", "2026-01-01T00:00:00Z"),
+            Review("carol", "COMMENTED", "2026-01-01T00:00:00Z"),
+            Review("coverage-bot", "DISMISSED", "2026-01-01T00:00:00Z"),
+        ],
+        review_requests=[ReviewRequest("dave"), ReviewRequest("alice")],
+    )
+    groups = review.reviewer_groups(pr)
+    assert groups["approved"] == ["alice"]
+    assert groups["changes_requested"] == ["bob"]
+    assert groups["commented"] == ["carol", "coverage-bot"]  # any non-(approve/changes)
+    # dave requested with no review -> awaiting; alice already reviewed -> excluded
+    assert groups["awaiting"] == ["dave"]
+
+
 def test_latest_reviews_by_author_dedupes() -> None:
     pr = _pr(
         latest_reviews=[
