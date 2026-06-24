@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cubrid-dev2-pr"
+version = "0.1.0"
+description = "CLI/TUI for tracking open CUBRID dev2 teammate PRs with review and approval state."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Daehyun Kim", email = "dhkim@cubrid.com" }]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13.7",
+    "textual>=0.60",
+]
+
+[project.scripts]
+cubrid-dev2-pr = "cubrid_dev2_pr.cli:run"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cubrid_dev2_pr"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
