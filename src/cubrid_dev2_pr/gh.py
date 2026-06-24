@@ -1,32 +1,133 @@
-"""Fetch PR data by shelling out to the GitHub CLI (``gh``)."""
+"""Fetch PR data by shelling out to the GitHub CLI (``gh``).
+
+The subprocess layer (:func:`fetch_pr_list`, :func:`fetch_pr_detail`) is kept
+thin; the JSON-to-model translation lives in pure functions (:func:`parse_pr`)
+so it can be unit-tested against fixtures without invoking ``gh``.
+"""
 
 from __future__ import annotations
 
-from cubrid_dev2_pr.models import PullRequest
+import json
+import shutil
+import subprocess
+from typing import Any
+
+from cubrid_dev2_pr.models import PullRequest, Review, ReviewRequest
 
 LIST_FIELDS = "number,title,url,author,isDraft,createdAt,latestReviews,reviewRequests"
 DETAIL_FIELDS = "number,title,url,author,isDraft,createdAt,body,latestReviews,reviewRequests"
 
 
+class GhError(Exception):
+    """Raised when ``gh`` is missing, unauthenticated, or returns an error."""
+
+
 def ensure_gh_available() -> None:
     """Verify ``gh`` is installed and authenticated.
 
-    Milestone 3: preflight check; raise a clear, user-facing error otherwise.
+    Raises :class:`GhError` with an actionable message otherwise.
     """
-    raise NotImplementedError("Milestone 3: gh availability/auth preflight")
+    if shutil.which("gh") is None:
+        raise GhError(
+            "GitHub CLI `gh` was not found on PATH. Install it from https://cli.github.com/."
+        )
+    result = subprocess.run(["gh", "auth", "status"], capture_output=True, text=True, check=False)
+    if result.returncode != 0:
+        detail = (result.stderr or result.stdout).strip()
+        raise GhError(f"`gh` is not authenticated. Run `gh auth login`.\n{detail}")
+
+
+def _run_gh(args: list[str]) -> str:
+    """Run ``gh`` with the given args and return stdout, raising on failure."""
+    try:
+        result = subprocess.run(["gh", *args], capture_output=True, text=True, check=False)
+    except FileNotFoundError as exc:
+        raise GhError(
+            "GitHub CLI `gh` was not found on PATH. Install it from https://cli.github.com/."
+        ) from exc
+    if result.returncode != 0:
+        raise GhError(f"`gh {' '.join(args)}` failed:\n{result.stderr.strip()}")
+    return result.stdout
 
 
 def fetch_pr_list(repo: str, limit: int) -> list[PullRequest]:
-    """Run ``gh pr list`` and parse the result into models.
-
-    Milestone 3: subprocess call + JSON parse + reviewRequests normalization.
-    """
-    raise NotImplementedError("Milestone 3: gh pr list + JSON parse")
+    """Run ``gh pr list`` for open PRs and parse the result into models."""
+    out = _run_gh(
+        [
+            "pr",
+            "list",
+            "--repo",
+            repo,
+            "--state",
+            "open",
+            "--limit",
+            str(limit),
+            "--json",
+            LIST_FIELDS,
+        ]
+    )
+    return [parse_pr(obj) for obj in _loads(out)]
 
 
 def fetch_pr_detail(repo: str, number: int) -> PullRequest:
-    """Run ``gh pr view <number>`` (including body) and parse into a model.
+    """Run ``gh pr view <number>`` (including body) and parse into a model."""
+    out = _run_gh(["pr", "view", str(number), "--repo", repo, "--json", DETAIL_FIELDS])
+    return parse_pr(_loads(out))
 
-    Milestone 3: subprocess call + JSON parse for the detail screen.
+
+def _loads(text: str) -> Any:
+    """Parse JSON, converting decode errors into :class:`GhError`."""
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise GhError(f"Could not parse `gh` JSON output: {exc}") from exc
+
+
+def parse_pr(obj: Any) -> PullRequest:
+    """Translate one decoded ``gh`` PR object into a :class:`PullRequest`."""
+    author = obj.get("author") or {}
+    body = obj.get("body")
+    return PullRequest(
+        number=int(obj["number"]),
+        title=str(obj.get("title", "")),
+        url=str(obj.get("url", "")),
+        author_login=str(author.get("login") or "ghost"),
+        is_draft=bool(obj.get("isDraft", False)),
+        created_at=str(obj.get("createdAt", "")),
+        latest_reviews=_parse_reviews(obj.get("latestReviews")),
+        review_requests=_parse_requests(obj.get("reviewRequests")),
+        body=str(body) if body is not None else None,
+    )
+
+
+def _parse_reviews(raw: Any) -> list[Review]:
+    """Parse ``latestReviews``, skipping entries without an author login."""
+    reviews: list[Review] = []
+    for item in raw or []:
+        author = item.get("author") or {}
+        login = author.get("login")
+        if not login:
+            continue
+        reviews.append(
+            Review(
+                author_login=str(login),
+                state=str(item.get("state", "")),
+                submitted_at=str(item.get("submittedAt", "")),
+            )
+        )
+    return reviews
+
+
+def _parse_requests(raw: Any) -> list[ReviewRequest]:
+    """Parse ``reviewRequests``, normalizing user/team/bot to a single name.
+
+    GitHub exposes users via ``login``, teams via ``slug``, with a ``name``
+    fallback; the first present wins.
     """
-    raise NotImplementedError("Milestone 3: gh pr view + JSON parse")
+    requests: list[ReviewRequest] = []
+    for item in raw or []:
+        name = item.get("login") or item.get("slug") or item.get("name")
+        if not name:
+            continue
+        requests.append(ReviewRequest(name=str(name)))
+    return requests
