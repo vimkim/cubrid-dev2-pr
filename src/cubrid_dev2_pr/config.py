@@ -9,8 +9,10 @@ seed file is rendered from a hand-authored, commented template.
 from __future__ import annotations
 
 import os
+import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 DEFAULT_TEAMMATES: tuple[str, ...] = (
     "hgryoo",
@@ -26,6 +28,10 @@ DEFAULT_TEAMMATES: tuple[str, ...] = (
 DEFAULT_REVIEWER = "vimkim"
 DEFAULT_REPO = "CUBRID/cubrid"
 DEFAULT_LIMIT = 300
+
+
+class ConfigError(Exception):
+    """Raised when the config file exists but is malformed."""
 
 
 @dataclass
@@ -62,9 +68,45 @@ def default_config_toml() -> str:
 
 
 def load_config(path: Path | None = None) -> Config:
-    """Load config, creating the seed file on first run.
+    """Load config, auto-creating the seed file on first run.
 
-    Milestone 2: read TOML via ``tomllib``, auto-create from
-    :func:`default_config_toml` when absent, and validate fields.
+    If the file is absent it (and its parent dirs) are created from
+    :func:`default_config_toml`, then read back through the same parse path so
+    disk and memory cannot diverge. Raises :class:`ConfigError` on malformed
+    TOML or wrong field types.
     """
-    raise NotImplementedError("Milestone 2: TOML load + first-run create")
+    cfg_path = path if path is not None else config_path()
+    if not cfg_path.exists():
+        cfg_path.parent.mkdir(parents=True, exist_ok=True)
+        cfg_path.write_text(default_config_toml(), encoding="utf-8")
+    try:
+        with cfg_path.open("rb") as fh:
+            data = tomllib.load(fh)
+    except tomllib.TOMLDecodeError as exc:
+        raise ConfigError(f"Invalid TOML in {cfg_path}: {exc}") from exc
+    return _config_from_dict(data, cfg_path)
+
+
+def _config_from_dict(data: dict[str, Any], source: Path) -> Config:
+    """Validate a parsed TOML mapping into a :class:`Config`.
+
+    Missing keys fall back to the module defaults; present keys must have the
+    expected type (``limit`` rejects ``bool``, which is an ``int`` subclass).
+    """
+    teammates = data.get("teammates", list(DEFAULT_TEAMMATES))
+    if not isinstance(teammates, list) or not all(isinstance(login, str) for login in teammates):
+        raise ConfigError(f"{source}: 'teammates' must be a list of strings")
+
+    reviewer = data.get("reviewer", DEFAULT_REVIEWER)
+    if not isinstance(reviewer, str):
+        raise ConfigError(f"{source}: 'reviewer' must be a string")
+
+    repo = data.get("repo", DEFAULT_REPO)
+    if not isinstance(repo, str):
+        raise ConfigError(f"{source}: 'repo' must be a string")
+
+    limit = data.get("limit", DEFAULT_LIMIT)
+    if isinstance(limit, bool) or not isinstance(limit, int):
+        raise ConfigError(f"{source}: 'limit' must be an integer")
+
+    return Config(teammates=list(teammates), reviewer=reviewer, repo=repo, limit=limit)

@@ -27,3 +27,57 @@ def test_default_config_toml_round_trips() -> None:
     assert data["reviewer"] == config.DEFAULT_REVIEWER
     assert data["limit"] == config.DEFAULT_LIMIT
     assert set(data["teammates"]) == set(config.DEFAULT_TEAMMATES)
+
+
+def test_load_config_creates_seed_when_absent(tmp_path: Path) -> None:
+    cfg_path = tmp_path / "nested" / "config.toml"
+    cfg = config.load_config(cfg_path)
+    assert cfg_path.exists()  # parent dirs created too
+    assert cfg.repo == config.DEFAULT_REPO
+    assert cfg.reviewer == config.DEFAULT_REVIEWER
+    assert cfg.limit == config.DEFAULT_LIMIT
+    assert set(cfg.teammates) == set(config.DEFAULT_TEAMMATES)
+
+
+def test_load_config_reads_custom_values(tmp_path: Path) -> None:
+    cfg_path = tmp_path / "config.toml"
+    cfg_path.write_text(
+        'teammates = ["alice", "bob"]\nreviewer = "alice"\nrepo = "ACME/widgets"\nlimit = 42\n',
+        encoding="utf-8",
+    )
+    cfg = config.load_config(cfg_path)
+    assert cfg.teammates == ["alice", "bob"]
+    assert cfg.reviewer == "alice"
+    assert cfg.repo == "ACME/widgets"
+    assert cfg.limit == 42
+
+
+def test_load_config_fills_missing_fields(tmp_path: Path) -> None:
+    cfg_path = tmp_path / "config.toml"
+    cfg_path.write_text('teammates = ["solo"]\n', encoding="utf-8")
+    cfg = config.load_config(cfg_path)
+    assert cfg.teammates == ["solo"]
+    assert cfg.reviewer == config.DEFAULT_REVIEWER
+    assert cfg.repo == config.DEFAULT_REPO
+    assert cfg.limit == config.DEFAULT_LIMIT
+
+
+def test_load_config_rejects_bad_toml(tmp_path: Path) -> None:
+    cfg_path = tmp_path / "config.toml"
+    cfg_path.write_text("this is = = not toml", encoding="utf-8")
+    with pytest.raises(config.ConfigError):
+        config.load_config(cfg_path)
+
+
+def test_load_config_rejects_non_int_limit(tmp_path: Path) -> None:
+    cfg_path = tmp_path / "config.toml"
+    cfg_path.write_text("limit = true\n", encoding="utf-8")  # bool is not a valid int
+    with pytest.raises(config.ConfigError):
+        config.load_config(cfg_path)
+
+
+def test_load_config_rejects_non_string_teammate(tmp_path: Path) -> None:
+    cfg_path = tmp_path / "config.toml"
+    cfg_path.write_text("teammates = [1, 2]\n", encoding="utf-8")
+    with pytest.raises(config.ConfigError):
+        config.load_config(cfg_path)
