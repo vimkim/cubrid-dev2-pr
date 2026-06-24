@@ -7,6 +7,8 @@ values (a ``None`` default marks a flag as "not passed").
 
 from __future__ import annotations
 
+from datetime import date
+
 import typer
 from rich.console import Console
 from rich.text import Text
@@ -32,6 +34,11 @@ def main(
         None, "--reviewer", help="Login whose review state is shown. Overrides config."
     ),
     limit: int | None = typer.Option(None, "--limit", help="Max PRs to fetch. Overrides config."),
+    since_months: int | None = typer.Option(
+        None,
+        "--since-months",
+        help="Only PRs created within the last N months (0 = no bound). Overrides config.",
+    ),
     drafts: bool = typer.Option(False, "--drafts", "--include-drafts", help="Include draft PRs."),
     tui: bool = typer.Option(False, "--tui", help="Launch the interactive TUI."),
     version: bool = typer.Option(
@@ -51,8 +58,11 @@ def main(
         repo_v = repo if repo is not None else cfg.repo
         reviewer_v = reviewer if reviewer is not None else cfg.reviewer
         limit_v = limit if limit is not None else cfg.limit
+        since_months_v = since_months if since_months is not None else cfg.since_months
+        cutoff = gh.months_ago(date.today(), since_months_v)
+        created_since = cutoff.isoformat() if cutoff else None
         gh.ensure_gh_available()
-        prs = gh.fetch_pr_list(repo_v, limit_v)
+        prs = gh.fetch_pr_list(repo_v, limit_v, created_since)
     except (config.ConfigError, gh.GhError) as exc:
         err.print(Text(f"error: {exc}", style="red"))
         raise typer.Exit(code=1) from exc
@@ -70,6 +80,8 @@ def main(
         return
 
     header = f"Open PRs in {repo_v} from configured teammates — reviewer: {reviewer_v}"
+    if created_since is not None:
+        header += f"  (since {created_since})"
     if not drafts:
         header += "  (drafts hidden; use --drafts)"
     out.print(header)

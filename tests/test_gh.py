@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import shutil
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -92,3 +93,51 @@ def test_ensure_gh_available_raises_when_missing(
     monkeypatch.setattr(shutil, "which", lambda _: None)
     with pytest.raises(gh.GhError):
         gh.ensure_gh_available()
+
+
+def test_months_ago_basic() -> None:
+    assert gh.months_ago(date(2026, 6, 24), 3) == date(2026, 3, 24)
+
+
+def test_months_ago_crosses_year_boundary() -> None:
+    assert gh.months_ago(date(2026, 1, 15), 3) == date(2025, 10, 15)
+
+
+def test_months_ago_clamps_day_to_shorter_month() -> None:
+    # 3 months before May 31 lands in February, which has no 31st.
+    assert gh.months_ago(date(2026, 5, 31), 3) == date(2026, 2, 28)
+
+
+def test_months_ago_zero_or_negative_means_no_bound() -> None:
+    assert gh.months_ago(date(2026, 6, 24), 0) is None
+    assert gh.months_ago(date(2026, 6, 24), -1) is None
+
+
+def test_fetch_pr_list_adds_search_when_created_since_given(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured: list[str] = []
+
+    def _fake_run(args: list[str]) -> str:
+        captured.extend(args)
+        return "[]"
+
+    monkeypatch.setattr(gh, "_run_gh", _fake_run)
+    gh.fetch_pr_list("ACME/widgets", 300, created_since="2026-03-24")
+    assert "--search" in captured
+    assert captured[captured.index("--search") + 1] == "created:>=2026-03-24 sort:created-desc"
+    assert "open" in captured  # --state open still applied
+
+
+def test_fetch_pr_list_omits_search_without_created_since(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured: list[str] = []
+
+    def _fake_run(args: list[str]) -> str:
+        captured.extend(args)
+        return "[]"
+
+    monkeypatch.setattr(gh, "_run_gh", _fake_run)
+    gh.fetch_pr_list("ACME/widgets", 300)
+    assert "--search" not in captured

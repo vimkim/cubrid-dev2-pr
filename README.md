@@ -38,6 +38,8 @@ cubrid-dev2-pr --drafts             # include draft PRs
 cubrid-dev2-pr --repo CUBRID/cubrid
 cubrid-dev2-pr --reviewer vimkim
 cubrid-dev2-pr --limit 300
+cubrid-dev2-pr --since-months 6     # only PRs opened in the last 6 months
+cubrid-dev2-pr --since-months 0     # no time bound (all open PRs)
 cubrid-dev2-pr --tui                # interactive Textual UI
 ```
 
@@ -73,14 +75,19 @@ config key.
 A TOML config is auto-created on first run at
 `~/.config/cubrid-dev2-pr/config.toml` (honoring `$XDG_CONFIG_HOME`), seeded with
 the dev2 teammate logins. It sets the teammate list plus default `reviewer`,
-`repo`, and `limit`; CLI flags override these.
+`repo`, `limit`, and `since_months`; CLI flags override these.
 
 ```toml
-teammates = ["hgryoo", "hornetmj", "hyahong", "vimkim", "..."]
-reviewer  = "vimkim"          # change to your own login
-repo      = "CUBRID/cubrid"
-limit     = 300
+teammates    = ["hgryoo", "hornetmj", "hyahong", "vimkim", "..."]
+reviewer     = "vimkim"       # change to your own login
+repo         = "CUBRID/cubrid"
+limit        = 300            # max PRs fetched by `gh pr list`
+since_months = 3             # only PRs opened in the last N months; 0 = no bound
 ```
+
+`limit` and `since_months` are applied **server-side** by `gh` (via `--limit`
+and the search qualifier `created:>=<cutoff>`), so the time window narrows the
+result set before `limit` truncates it — newest PRs are kept first.
 
 ## Development
 
