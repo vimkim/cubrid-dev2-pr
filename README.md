@@ -7,6 +7,8 @@ drill-down detail view.
 It uses the GitHub CLI (`gh`) as its data source, so authentication and host
 config stay outside this tool.
 
+![cubrid-dev2-pr listing open CUBRID teammate PRs as a color-coded table, with approval ratios and per-reviewer state](docs/images/screenshot.svg)
+
 ## Requirements
 
 - [`uv`](https://docs.astral.sh/uv/) (installs the tool, deps, and Python)

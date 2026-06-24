@@ -19,6 +19,11 @@ run *args:
 tui:
     uv run cubrid-dev2-pr --tui
 
+# Regenerate the README screenshot from live data. Optional row cap:
+# `just screenshot` (all PRs) or `just screenshot 12` (12 most recent).
+screenshot rows="":
+    uv run python scripts/screenshot.py "$@"
+
 # Lint with ruff (the "check" step)
 lint:
     uv run ruff check

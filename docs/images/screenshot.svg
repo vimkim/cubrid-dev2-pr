@@ -1,0 +1,304 @@
+<svg class="rich-terminal" viewBox="0 0 1482 1538.3999999999999" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+    <style>
+
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Regular"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Bold"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+        font-style: bold;
+        font-weight: 700;
+    }
+
+    .terminal-2954202892-matrix {
+        font-family: Fira Code, monospace;
+        font-size: 20px;
+        line-height: 24.4px;
+        font-variant-east-asian: full-width;
+    }
+
+    .terminal-2954202892-title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: arial;
+    }
+
+    .terminal-2954202892-r1 { fill: #c5c8c6 }
+.terminal-2954202892-r2 { fill: #c5c8c6;font-weight: bold }
+.terminal-2954202892-r3 { fill: #cc555a }
+.terminal-2954202892-r4 { fill: #d0b344 }
+.terminal-2954202892-r5 { fill: #868887 }
+.terminal-2954202892-r6 { fill: #68a0b3 }
+.terminal-2954202892-r7 { fill: #98a84b }
+    </style>
+
+    <defs>
+    <clipPath id="terminal-2954202892-clip-terminal">
+      <rect x="0" y="0" width="1463.0" height="1487.3999999999999" />
+    </clipPath>
+    <clipPath id="terminal-2954202892-line-0">
+    <rect x="0" y="1.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-1">
+    <rect x="0" y="25.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-2">
+    <rect x="0" y="50.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-3">
+    <rect x="0" y="74.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-4">
+    <rect x="0" y="99.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-5">
+    <rect x="0" y="123.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-6">
+    <rect x="0" y="147.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-7">
+    <rect x="0" y="172.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-8">
+    <rect x="0" y="196.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-9">
+    <rect x="0" y="221.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-10">
+    <rect x="0" y="245.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-11">
+    <rect x="0" y="269.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-12">
+    <rect x="0" y="294.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-13">
+    <rect x="0" y="318.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-14">
+    <rect x="0" y="343.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-15">
+    <rect x="0" y="367.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-16">
+    <rect x="0" y="391.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-17">
+    <rect x="0" y="416.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-18">
+    <rect x="0" y="440.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-19">
+    <rect x="0" y="465.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-20">
+    <rect x="0" y="489.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-21">
+    <rect x="0" y="513.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-22">
+    <rect x="0" y="538.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-23">
+    <rect x="0" y="562.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-24">
+    <rect x="0" y="587.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-25">
+    <rect x="0" y="611.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-26">
+    <rect x="0" y="635.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-27">
+    <rect x="0" y="660.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-28">
+    <rect x="0" y="684.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-29">
+    <rect x="0" y="709.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-30">
+    <rect x="0" y="733.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-31">
+    <rect x="0" y="757.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-32">
+    <rect x="0" y="782.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-33">
+    <rect x="0" y="806.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-34">
+    <rect x="0" y="831.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-35">
+    <rect x="0" y="855.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-36">
+    <rect x="0" y="879.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-37">
+    <rect x="0" y="904.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-38">
+    <rect x="0" y="928.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-39">
+    <rect x="0" y="953.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-40">
+    <rect x="0" y="977.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-41">
+    <rect x="0" y="1001.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-42">
+    <rect x="0" y="1026.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-43">
+    <rect x="0" y="1050.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-44">
+    <rect x="0" y="1075.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-45">
+    <rect x="0" y="1099.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-46">
+    <rect x="0" y="1123.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-47">
+    <rect x="0" y="1148.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-48">
+    <rect x="0" y="1172.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-49">
+    <rect x="0" y="1197.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-50">
+    <rect x="0" y="1221.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-51">
+    <rect x="0" y="1245.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-52">
+    <rect x="0" y="1270.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-53">
+    <rect x="0" y="1294.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-54">
+    <rect x="0" y="1319.1" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-55">
+    <rect x="0" y="1343.5" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-56">
+    <rect x="0" y="1367.9" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-57">
+    <rect x="0" y="1392.3" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-58">
+    <rect x="0" y="1416.7" width="1464" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2954202892-line-59">
+    <rect x="0" y="1441.1" width="1464" height="24.65"/>
+            </clipPath>
+    </defs>
+
+    <rect fill="#292929" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="1480" height="1536.4" rx="8"/><text class="terminal-2954202892-title" fill="#c5c8c6" text-anchor="middle" x="740" y="27">cubrid-dev2-pr</text>
+            <g transform="translate(26,22)">
+            <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
+            <circle cx="22" cy="0" r="7" fill="#febc2e"/>
+            <circle cx="44" cy="0" r="7" fill="#28c840"/>
+            </g>
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-2954202892-clip-terminal)">
+    
+    <g class="terminal-2954202892-matrix">
+    <text class="terminal-2954202892-r1" x="0" y="20" textLength="878.4" clip-path="url(#terminal-2954202892-line-0)">Open&#160;PRs&#160;in&#160;CUBRID/cubrid&#160;from&#160;configured&#160;teammates&#160;—&#160;reviewer:&#160;vimkim&#160;&#160;</text><text class="terminal-2954202892-r2" x="878.4" y="20" textLength="12.2" clip-path="url(#terminal-2954202892-line-0)">(</text><text class="terminal-2954202892-r1" x="890.6" y="20" textLength="329.4" clip-path="url(#terminal-2954202892-line-0)">drafts&#160;hidden;&#160;use&#160;--drafts</text><text class="terminal-2954202892-r2" x="1220" y="20" textLength="12.2" clip-path="url(#terminal-2954202892-line-0)">)</text><text class="terminal-2954202892-r1" x="1464" y="20" textLength="12.2" clip-path="url(#terminal-2954202892-line-0)">
+</text><text class="terminal-2954202892-r1" x="1464" y="44.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-1)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="68.8" textLength="61" clip-path="url(#terminal-2954202892-line-2)">&#160;&#160;&#160;PR</text><text class="terminal-2954202892-r2" x="122" y="68.8" textLength="146.4" clip-path="url(#terminal-2954202892-line-2)">AUTHOR&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r2" x="305" y="68.8" textLength="122" clip-path="url(#terminal-2954202892-line-2)">OPENED&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r2" x="463.6" y="68.8" textLength="109.8" clip-path="url(#terminal-2954202892-line-2)">APPROVALS</text><text class="terminal-2954202892-r2" x="610" y="68.8" textLength="170.8" clip-path="url(#terminal-2954202892-line-2)">MY&#160;REVIEW&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r2" x="817.4" y="68.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-2)">TITLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="68.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-2)">
+</text><text class="terminal-2954202892-r1" x="0" y="93.2" textLength="1464" clip-path="url(#terminal-2954202892-line-3)">&#160;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#160;</text><text class="terminal-2954202892-r1" x="1464" y="93.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-3)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="117.6" textLength="61" clip-path="url(#terminal-2954202892-line-4)">#7345</text><text class="terminal-2954202892-r1" x="122" y="117.6" textLength="146.4" clip-path="url(#terminal-2954202892-line-4)">hyahong&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="117.6" textLength="122" clip-path="url(#terminal-2954202892-line-4)">2026-06-24</text><text class="terminal-2954202892-r3" x="463.6" y="117.6" textLength="109.8" clip-path="url(#terminal-2954202892-line-4)">&#160;&#160;&#160;&#160;&#160;&#160;0/8</text><text class="terminal-2954202892-r4" x="610" y="117.6" textLength="170.8" clip-path="url(#terminal-2954202892-line-4)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="117.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-4)">[CBRD-26662]&#160;make&#160;the&#160;number&#160;of&#160;worker&#160;limit&#160;to&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="117.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-4)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="142" textLength="622.2" clip-path="url(#terminal-2954202892-line-5)">global&#160;and&#160;change&#160;the&#160;policy&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="142" textLength="12.2" clip-path="url(#terminal-2954202892-line-5)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="166.4" textLength="512.4" clip-path="url(#terminal-2954202892-line-6)">https://github.com/CUBRID/cubrid/pull/7345</text><text class="terminal-2954202892-r1" x="1464" y="166.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-6)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="190.8" textLength="61" clip-path="url(#terminal-2954202892-line-7)">#7341</text><text class="terminal-2954202892-r1" x="122" y="190.8" textLength="146.4" clip-path="url(#terminal-2954202892-line-7)">hgryoo&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="190.8" textLength="122" clip-path="url(#terminal-2954202892-line-7)">2026-06-23</text><text class="terminal-2954202892-r3" x="463.6" y="190.8" textLength="109.8" clip-path="url(#terminal-2954202892-line-7)">&#160;&#160;&#160;&#160;&#160;&#160;0/9</text><text class="terminal-2954202892-r4" x="610" y="190.8" textLength="170.8" clip-path="url(#terminal-2954202892-line-7)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="190.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-7)">[CBRD-26960]&#160;Scale&#160;object-lock&#160;hash&#160;bucket&#160;count&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="190.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-7)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="215.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-8)">with&#160;lock_escalation&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="215.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-8)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="239.6" textLength="512.4" clip-path="url(#terminal-2954202892-line-9)">https://github.com/CUBRID/cubrid/pull/7341</text><text class="terminal-2954202892-r1" x="1464" y="239.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-9)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="264" textLength="61" clip-path="url(#terminal-2954202892-line-10)">#7337</text><text class="terminal-2954202892-r1" x="122" y="264" textLength="146.4" clip-path="url(#terminal-2954202892-line-10)">vimkim&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="264" textLength="122" clip-path="url(#terminal-2954202892-line-10)">2026-06-22</text><text class="terminal-2954202892-r4" x="463.6" y="264" textLength="109.8" clip-path="url(#terminal-2954202892-line-10)">&#160;&#160;&#160;&#160;&#160;&#160;4/9</text><text class="terminal-2954202892-r6" x="610" y="264" textLength="170.8" clip-path="url(#terminal-2954202892-line-10)">self-authored&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="264" textLength="622.2" clip-path="url(#terminal-2954202892-line-10)">[CBRD-26818]&#160;Preserve&#160;OOS&#160;expansion&#160;copyarea&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="264" textLength="12.2" clip-path="url(#terminal-2954202892-line-10)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="288.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-11)">ownership&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="288.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-11)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="312.8" textLength="512.4" clip-path="url(#terminal-2954202892-line-12)">https://github.com/CUBRID/cubrid/pull/7337</text><text class="terminal-2954202892-r1" x="1464" y="312.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-12)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="337.2" textLength="61" clip-path="url(#terminal-2954202892-line-13)">#7334</text><text class="terminal-2954202892-r1" x="122" y="337.2" textLength="146.4" clip-path="url(#terminal-2954202892-line-13)">vimkim&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="337.2" textLength="122" clip-path="url(#terminal-2954202892-line-13)">2026-06-22</text><text class="terminal-2954202892-r4" x="463.6" y="337.2" textLength="109.8" clip-path="url(#terminal-2954202892-line-13)">&#160;&#160;&#160;&#160;&#160;&#160;3/9</text><text class="terminal-2954202892-r6" x="610" y="337.2" textLength="170.8" clip-path="url(#terminal-2954202892-line-13)">self-authored&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="337.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-13)">[CBRD-26912]&#160;Add&#160;STORAGE&#160;PREFER_INLINE&#160;column&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="337.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-13)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="361.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-14)">option&#160;to&#160;defer&#160;OOS&#160;demotion&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="361.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-14)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="386" textLength="512.4" clip-path="url(#terminal-2954202892-line-15)">https://github.com/CUBRID/cubrid/pull/7334</text><text class="terminal-2954202892-r1" x="1464" y="386" textLength="12.2" clip-path="url(#terminal-2954202892-line-15)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="410.4" textLength="61" clip-path="url(#terminal-2954202892-line-16)">#7331</text><text class="terminal-2954202892-r1" x="122" y="410.4" textLength="146.4" clip-path="url(#terminal-2954202892-line-16)">hgryoo&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="410.4" textLength="122" clip-path="url(#terminal-2954202892-line-16)">2026-06-19</text><text class="terminal-2954202892-r3" x="463.6" y="410.4" textLength="109.8" clip-path="url(#terminal-2954202892-line-16)">&#160;&#160;&#160;&#160;&#160;&#160;0/5</text><text class="terminal-2954202892-r4" x="610" y="410.4" textLength="170.8" clip-path="url(#terminal-2954202892-line-16)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="410.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-16)">[CUBVEC-137]&#160;Add&#160;USING&#160;clause&#160;to&#160;CREATE&#160;INDEX&#160;for&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="410.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-16)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="434.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-17)">index-algorithm&#160;selection&#160;(btree,&#160;hnsw)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="434.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-17)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="459.2" textLength="512.4" clip-path="url(#terminal-2954202892-line-18)">https://github.com/CUBRID/cubrid/pull/7331</text><text class="terminal-2954202892-r1" x="1464" y="459.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-18)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="483.6" textLength="61" clip-path="url(#terminal-2954202892-line-19)">#7323</text><text class="terminal-2954202892-r1" x="122" y="483.6" textLength="146.4" clip-path="url(#terminal-2954202892-line-19)">hyahong&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="483.6" textLength="122" clip-path="url(#terminal-2954202892-line-19)">2026-06-18</text><text class="terminal-2954202892-r4" x="463.6" y="483.6" textLength="109.8" clip-path="url(#terminal-2954202892-line-19)">&#160;&#160;&#160;&#160;&#160;&#160;1/2</text><text class="terminal-2954202892-r4" x="610" y="483.6" textLength="170.8" clip-path="url(#terminal-2954202892-line-19)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="483.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-19)">[CBRD-26662]&#160;Feature/worker&#160;pool&#160;elastic&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="483.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-19)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="508" textLength="512.4" clip-path="url(#terminal-2954202892-line-20)">https://github.com/CUBRID/cubrid/pull/7323</text><text class="terminal-2954202892-r1" x="1464" y="508" textLength="12.2" clip-path="url(#terminal-2954202892-line-20)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="532.4" textLength="61" clip-path="url(#terminal-2954202892-line-21)">#7317</text><text class="terminal-2954202892-r1" x="122" y="532.4" textLength="146.4" clip-path="url(#terminal-2954202892-line-21)">InChiJun&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="532.4" textLength="122" clip-path="url(#terminal-2954202892-line-21)">2026-06-17</text><text class="terminal-2954202892-r4" x="463.6" y="532.4" textLength="109.8" clip-path="url(#terminal-2954202892-line-21)">&#160;&#160;&#160;&#160;&#160;&#160;1/8</text><text class="terminal-2954202892-r4" x="610" y="532.4" textLength="170.8" clip-path="url(#terminal-2954202892-line-21)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="532.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-21)">[CBRD-26944]&#160;Parallelize&#160;SHOW&#160;HEAP&#160;CAPACITY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="532.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-21)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="556.8" textLength="512.4" clip-path="url(#terminal-2954202892-line-22)">https://github.com/CUBRID/cubrid/pull/7317</text><text class="terminal-2954202892-r1" x="1464" y="556.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-22)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="581.2" textLength="61" clip-path="url(#terminal-2954202892-line-23)">#7313</text><text class="terminal-2954202892-r1" x="122" y="581.2" textLength="146.4" clip-path="url(#terminal-2954202892-line-23)">InChiJun&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="581.2" textLength="122" clip-path="url(#terminal-2954202892-line-23)">2026-06-17</text><text class="terminal-2954202892-r7" x="463.6" y="581.2" textLength="109.8" clip-path="url(#terminal-2954202892-line-23)">&#160;&#160;&#160;&#160;&#160;&#160;7/7</text><text class="terminal-2954202892-r7" x="610" y="581.2" textLength="170.8" clip-path="url(#terminal-2954202892-line-23)">APPROVED&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="581.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-23)">[CBRD-26897]&#160;Acquire&#160;IS-LOCK&#160;for&#160;SHOW&#160;HEAP&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="581.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-23)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="605.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-24)">HEADER/CAPACITY&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="605.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-24)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="630" textLength="512.4" clip-path="url(#terminal-2954202892-line-25)">https://github.com/CUBRID/cubrid/pull/7313</text><text class="terminal-2954202892-r1" x="1464" y="630" textLength="12.2" clip-path="url(#terminal-2954202892-line-25)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="654.4" textLength="61" clip-path="url(#terminal-2954202892-line-26)">#7290</text><text class="terminal-2954202892-r1" x="122" y="654.4" textLength="146.4" clip-path="url(#terminal-2954202892-line-26)">YeunjunLee&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="654.4" textLength="122" clip-path="url(#terminal-2954202892-line-26)">2026-06-15</text><text class="terminal-2954202892-r4" x="463.6" y="654.4" textLength="109.8" clip-path="url(#terminal-2954202892-line-26)">&#160;&#160;&#160;&#160;&#160;&#160;6/9</text><text class="terminal-2954202892-r7" x="610" y="654.4" textLength="170.8" clip-path="url(#terminal-2954202892-line-26)">APPROVED&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="654.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-26)">[CBRD-26579]&#160;Fix&#160;max_key_len&#160;invariant&#160;violation&#160;by</text><text class="terminal-2954202892-r1" x="1464" y="654.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-26)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="678.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-27)">in-place&#160;DELETE_FLAG&#160;key&#160;insertion&#160;during&#160;online&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="678.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-27)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="703.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-28)">index&#160;build&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="703.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-28)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="727.6" textLength="512.4" clip-path="url(#terminal-2954202892-line-29)">https://github.com/CUBRID/cubrid/pull/7290</text><text class="terminal-2954202892-r1" x="1464" y="727.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-29)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="752" textLength="61" clip-path="url(#terminal-2954202892-line-30)">#7288</text><text class="terminal-2954202892-r1" x="122" y="752" textLength="146.4" clip-path="url(#terminal-2954202892-line-30)">H2SU&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="752" textLength="122" clip-path="url(#terminal-2954202892-line-30)">2026-06-12</text><text class="terminal-2954202892-r4" x="463.6" y="752" textLength="109.8" clip-path="url(#terminal-2954202892-line-30)">&#160;&#160;&#160;&#160;&#160;&#160;1/2</text><text class="terminal-2954202892-r4" x="610" y="752" textLength="170.8" clip-path="url(#terminal-2954202892-line-30)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="752" textLength="622.2" clip-path="url(#terminal-2954202892-line-30)">[CBRD-26911]&#160;Fix&#160;CDC&#160;reconnection&#160;after&#160;abnormal&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="752" textLength="12.2" clip-path="url(#terminal-2954202892-line-30)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="776.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-31)">client&#160;termination&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="776.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-31)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="800.8" textLength="512.4" clip-path="url(#terminal-2954202892-line-32)">https://github.com/CUBRID/cubrid/pull/7288</text><text class="terminal-2954202892-r1" x="1464" y="800.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-32)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="825.2" textLength="61" clip-path="url(#terminal-2954202892-line-33)">#7277</text><text class="terminal-2954202892-r1" x="122" y="825.2" textLength="146.4" clip-path="url(#terminal-2954202892-line-33)">YeunjunLee&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="825.2" textLength="122" clip-path="url(#terminal-2954202892-line-33)">2026-06-11</text><text class="terminal-2954202892-r4" x="463.6" y="825.2" textLength="109.8" clip-path="url(#terminal-2954202892-line-33)">&#160;&#160;&#160;&#160;&#160;&#160;1/4</text><text class="terminal-2954202892-r4" x="610" y="825.2" textLength="170.8" clip-path="url(#terminal-2954202892-line-33)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="825.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-33)">[CUBVEC-183]&#160;Coarse&#160;per-index&#160;serialization&#160;for&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="825.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-33)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="849.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-34)">HNSW&#160;transaction&#160;concurrency&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="849.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-34)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="874" textLength="512.4" clip-path="url(#terminal-2954202892-line-35)">https://github.com/CUBRID/cubrid/pull/7277</text><text class="terminal-2954202892-r1" x="1464" y="874" textLength="12.2" clip-path="url(#terminal-2954202892-line-35)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="898.4" textLength="61" clip-path="url(#terminal-2954202892-line-36)">#7218</text><text class="terminal-2954202892-r1" x="122" y="898.4" textLength="146.4" clip-path="url(#terminal-2954202892-line-36)">hyahong&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="898.4" textLength="122" clip-path="url(#terminal-2954202892-line-36)">2026-05-26</text><text class="terminal-2954202892-r4" x="463.6" y="898.4" textLength="109.8" clip-path="url(#terminal-2954202892-line-36)">&#160;&#160;&#160;&#160;&#160;&#160;2/9</text><text class="terminal-2954202892-r4" x="610" y="898.4" textLength="170.8" clip-path="url(#terminal-2954202892-line-36)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="898.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-36)">[CBRD-26829]&#160;Add&#160;unit&#160;tests&#160;for&#160;elastic&#160;worker&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="898.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-36)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="922.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-37)">pool.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="922.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-37)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="947.2" textLength="512.4" clip-path="url(#terminal-2954202892-line-38)">https://github.com/CUBRID/cubrid/pull/7218</text><text class="terminal-2954202892-r1" x="1464" y="947.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-38)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="971.6" textLength="61" clip-path="url(#terminal-2954202892-line-39)">#7210</text><text class="terminal-2954202892-r1" x="122" y="971.6" textLength="146.4" clip-path="url(#terminal-2954202892-line-39)">hgryoo&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="971.6" textLength="122" clip-path="url(#terminal-2954202892-line-39)">2026-05-22</text><text class="terminal-2954202892-r3" x="463.6" y="971.6" textLength="109.8" clip-path="url(#terminal-2954202892-line-39)">&#160;&#160;&#160;&#160;&#160;&#160;0/8</text><text class="terminal-2954202892-r4" x="610" y="971.6" textLength="170.8" clip-path="url(#terminal-2954202892-line-39)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="971.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-39)">[CBRD-26511]&#160;Refactor&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="971.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-39)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="996" textLength="622.2" clip-path="url(#terminal-2954202892-line-40)">lock_internal_perform_lock_object:&#160;state&#160;machine&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="996" textLength="12.2" clip-path="url(#terminal-2954202892-line-40)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="1020.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-41)">instead&#160;of&#160;goto&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1020.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-41)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1044.8" textLength="512.4" clip-path="url(#terminal-2954202892-line-42)">https://github.com/CUBRID/cubrid/pull/7210</text><text class="terminal-2954202892-r1" x="1464" y="1044.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-42)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="1069.2" textLength="61" clip-path="url(#terminal-2954202892-line-43)">#7196</text><text class="terminal-2954202892-r1" x="122" y="1069.2" textLength="146.4" clip-path="url(#terminal-2954202892-line-43)">H2SU&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="1069.2" textLength="122" clip-path="url(#terminal-2954202892-line-43)">2026-05-20</text><text class="terminal-2954202892-r4" x="463.6" y="1069.2" textLength="109.8" clip-path="url(#terminal-2954202892-line-43)">&#160;&#160;&#160;&#160;&#160;&#160;7/8</text><text class="terminal-2954202892-r7" x="610" y="1069.2" textLength="170.8" clip-path="url(#terminal-2954202892-line-43)">APPROVED&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="1069.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-43)">[CBRD-26509]&#160;Protect&#160;archives&#160;during&#160;flashback&#160;init</text><text class="terminal-2954202892-r1" x="1464" y="1069.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-43)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="1093.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-44)">race&#160;window&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1093.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-44)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1118" textLength="512.4" clip-path="url(#terminal-2954202892-line-45)">https://github.com/CUBRID/cubrid/pull/7196</text><text class="terminal-2954202892-r1" x="1464" y="1118" textLength="12.2" clip-path="url(#terminal-2954202892-line-45)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="1142.4" textLength="61" clip-path="url(#terminal-2954202892-line-46)">#7157</text><text class="terminal-2954202892-r1" x="122" y="1142.4" textLength="146.4" clip-path="url(#terminal-2954202892-line-46)">vimkim&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="1142.4" textLength="122" clip-path="url(#terminal-2954202892-line-46)">2026-05-08</text><text class="terminal-2954202892-r4" x="463.6" y="1142.4" textLength="109.8" clip-path="url(#terminal-2954202892-line-46)">&#160;&#160;&#160;&#160;&#160;&#160;8/9</text><text class="terminal-2954202892-r6" x="610" y="1142.4" textLength="170.8" clip-path="url(#terminal-2954202892-line-46)">self-authored&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="1142.4" textLength="622.2" clip-path="url(#terminal-2954202892-line-46)">[CBRD-26500]&#160;Fix&#160;uint64&#160;underflow&#160;in&#160;page&#160;buffer&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1142.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-46)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="1166.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-47)">hit&#160;ratio&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1166.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-47)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1191.2" textLength="512.4" clip-path="url(#terminal-2954202892-line-48)">https://github.com/CUBRID/cubrid/pull/7157</text><text class="terminal-2954202892-r1" x="1464" y="1191.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-48)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="1215.6" textLength="61" clip-path="url(#terminal-2954202892-line-49)">#7016</text><text class="terminal-2954202892-r1" x="122" y="1215.6" textLength="146.4" clip-path="url(#terminal-2954202892-line-49)">InChiJun&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="1215.6" textLength="122" clip-path="url(#terminal-2954202892-line-49)">2026-04-06</text><text class="terminal-2954202892-r4" x="463.6" y="1215.6" textLength="109.8" clip-path="url(#terminal-2954202892-line-49)">&#160;&#160;&#160;&#160;&#160;&#160;6/9</text><text class="terminal-2954202892-r7" x="610" y="1215.6" textLength="170.8" clip-path="url(#terminal-2954202892-line-49)">APPROVED&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="1215.6" textLength="622.2" clip-path="url(#terminal-2954202892-line-49)">[CBRD-26388]&#160;Add&#160;per-table&#160;volume&#160;usage&#160;output&#160;to&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1215.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-49)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="1240" textLength="622.2" clip-path="url(#terminal-2954202892-line-50)">spacedb&#160;utility&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1240" textLength="12.2" clip-path="url(#terminal-2954202892-line-50)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1264.4" textLength="512.4" clip-path="url(#terminal-2954202892-line-51)">https://github.com/CUBRID/cubrid/pull/7016</text><text class="terminal-2954202892-r1" x="1464" y="1264.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-51)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="1288.8" textLength="61" clip-path="url(#terminal-2954202892-line-52)">#6908</text><text class="terminal-2954202892-r1" x="122" y="1288.8" textLength="146.4" clip-path="url(#terminal-2954202892-line-52)">youngjun9072</text><text class="terminal-2954202892-r1" x="305" y="1288.8" textLength="122" clip-path="url(#terminal-2954202892-line-52)">2026-03-16</text><text class="terminal-2954202892-r4" x="463.6" y="1288.8" textLength="109.8" clip-path="url(#terminal-2954202892-line-52)">&#160;&#160;&#160;&#160;&#160;&#160;6/9</text><text class="terminal-2954202892-r5" x="610" y="1288.8" textLength="170.8" clip-path="url(#terminal-2954202892-line-52)">commented&#160;only</text><text class="terminal-2954202892-r1" x="817.4" y="1288.8" textLength="512.4" clip-path="url(#terminal-2954202892-line-52)">[CBRD-26589]&#160;SBR&#160;로그&#160;복제&#160;버그&#160;수정&#160;및&#160;checksumdb&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1288.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-52)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="1313.2" textLength="524.6" clip-path="url(#terminal-2954202892-line-53)">에서&#160;checksum&#160;수행&#160;방식&#160;수정&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1313.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-53)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1337.6" textLength="512.4" clip-path="url(#terminal-2954202892-line-54)">https://github.com/CUBRID/cubrid/pull/6908</text><text class="terminal-2954202892-r1" x="1464" y="1337.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-54)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="1362" textLength="61" clip-path="url(#terminal-2954202892-line-55)">#6884</text><text class="terminal-2954202892-r1" x="122" y="1362" textLength="146.4" clip-path="url(#terminal-2954202892-line-55)">youngjun9072</text><text class="terminal-2954202892-r1" x="305" y="1362" textLength="122" clip-path="url(#terminal-2954202892-line-55)">2026-03-03</text><text class="terminal-2954202892-r4" x="463.6" y="1362" textLength="109.8" clip-path="url(#terminal-2954202892-line-55)">&#160;&#160;&#160;&#160;&#160;&#160;1/3</text><text class="terminal-2954202892-r4" x="610" y="1362" textLength="170.8" clip-path="url(#terminal-2954202892-line-55)">not&#160;reviewed&#160;&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="1362" textLength="597.8" clip-path="url(#terminal-2954202892-line-55)">[CBRD-26096]&#160;Feature/add&#160;replication&#160;option&#160;병합&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1362" textLength="12.2" clip-path="url(#terminal-2954202892-line-55)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1386.4" textLength="512.4" clip-path="url(#terminal-2954202892-line-56)">https://github.com/CUBRID/cubrid/pull/6884</text><text class="terminal-2954202892-r1" x="1464" y="1386.4" textLength="12.2" clip-path="url(#terminal-2954202892-line-56)">
+</text><text class="terminal-2954202892-r2" x="24.4" y="1410.8" textLength="61" clip-path="url(#terminal-2954202892-line-57)">#5460</text><text class="terminal-2954202892-r1" x="122" y="1410.8" textLength="146.4" clip-path="url(#terminal-2954202892-line-57)">vimkim&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="305" y="1410.8" textLength="122" clip-path="url(#terminal-2954202892-line-57)">2024-09-02</text><text class="terminal-2954202892-r7" x="463.6" y="1410.8" textLength="109.8" clip-path="url(#terminal-2954202892-line-57)">&#160;&#160;&#160;&#160;&#160;&#160;5/5</text><text class="terminal-2954202892-r6" x="610" y="1410.8" textLength="170.8" clip-path="url(#terminal-2954202892-line-57)">self-authored&#160;</text><text class="terminal-2954202892-r1" x="817.4" y="1410.8" textLength="622.2" clip-path="url(#terminal-2954202892-line-57)">[CBRD-25560]&#160;build(cmake):&#160;detect&#160;ccache&#160;and&#160;use&#160;it</text><text class="terminal-2954202892-r1" x="1464" y="1410.8" textLength="12.2" clip-path="url(#terminal-2954202892-line-57)">
+</text><text class="terminal-2954202892-r1" x="817.4" y="1435.2" textLength="622.2" clip-path="url(#terminal-2954202892-line-58)">as&#160;launcher&#160;if&#160;exists&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2954202892-r1" x="1464" y="1435.2" textLength="12.2" clip-path="url(#terminal-2954202892-line-58)">
+</text><text class="terminal-2954202892-r5" x="817.4" y="1459.6" textLength="512.4" clip-path="url(#terminal-2954202892-line-59)">https://github.com/CUBRID/cubrid/pull/5460</text><text class="terminal-2954202892-r1" x="1464" y="1459.6" textLength="12.2" clip-path="url(#terminal-2954202892-line-59)">
+</text><text class="terminal-2954202892-r1" x="1464" y="1484" textLength="12.2" clip-path="url(#terminal-2954202892-line-60)">
+</text>
+    </g>
+    </g>
+</svg>
