@@ -7,9 +7,11 @@ so it can be unit-tested against fixtures without invoking ``gh``.
 
 from __future__ import annotations
 
+import calendar
 import json
 import shutil
 import subprocess
+from datetime import date
 from typing import Any
 
 from cubrid_dev2_pr.models import PullRequest, Review, ReviewRequest
@@ -50,23 +52,34 @@ def _run_gh(args: list[str]) -> str:
     return result.stdout
 
 
-def fetch_pr_list(repo: str, limit: int) -> list[PullRequest]:
-    """Run ``gh pr list`` for open PRs and parse the result into models."""
-    out = _run_gh(
-        [
-            "pr",
-            "list",
-            "--repo",
-            repo,
-            "--state",
-            "open",
-            "--limit",
-            str(limit),
-            "--json",
-            LIST_FIELDS,
-        ]
-    )
-    return [parse_pr(obj) for obj in _loads(out)]
+def months_ago(today: date, months: int) -> date | None:
+    """Return the date ``months`` calendar months before ``today``.
+
+    Returns ``None`` when ``months <= 0`` (meaning "no time bound"). The day is
+    clamped to the target month's length so e.g. three months before May 31 is
+    Feb 28 (or 29), never an invalid date.
+    """
+    if months <= 0:
+        return None
+    total = (today.year * 12 + today.month - 1) - months
+    year, month_index = divmod(total, 12)
+    month = month_index + 1
+    last_day = calendar.monthrange(year, month)[1]
+    return date(year, month, min(today.day, last_day))
+
+
+def fetch_pr_list(repo: str, limit: int, created_since: str | None = None) -> list[PullRequest]:
+    """Run ``gh pr list`` for open PRs and parse the result into models.
+
+    When ``created_since`` (a ``YYYY-MM-DD`` date) is given, GitHub's search
+    ``created:>=`` qualifier filters server-side and ``sort:created-desc`` keeps
+    the newest PRs when ``limit`` truncates. ``--state open`` still applies.
+    """
+    args = ["pr", "list", "--repo", repo, "--state", "open", "--limit", str(limit)]
+    if created_since:
+        args += ["--search", f"created:>={created_since} sort:created-desc"]
+    args += ["--json", LIST_FIELDS]
+    return [parse_pr(obj) for obj in _loads(_run_gh(args))]
 
 
 def fetch_pr_detail(repo: str, number: int) -> PullRequest:

@@ -28,6 +28,7 @@ DEFAULT_TEAMMATES: tuple[str, ...] = (
 DEFAULT_REVIEWER = "vimkim"
 DEFAULT_REPO = "CUBRID/cubrid"
 DEFAULT_LIMIT = 300
+DEFAULT_SINCE_MONTHS = 3
 
 
 class ConfigError(Exception):
@@ -42,6 +43,7 @@ class Config:
     reviewer: str = DEFAULT_REVIEWER
     repo: str = DEFAULT_REPO
     limit: int = DEFAULT_LIMIT
+    since_months: int = DEFAULT_SINCE_MONTHS
 
 
 def config_path() -> Path:
@@ -63,7 +65,10 @@ def default_config_toml() -> str:
         "# Target repository (override with --repo).\n"
         f'repo = "{DEFAULT_REPO}"\n\n'
         "# Max PRs fetched by `gh pr list` (override with --limit).\n"
-        f"limit = {DEFAULT_LIMIT}\n"
+        f"limit = {DEFAULT_LIMIT}\n\n"
+        "# Only fetch PRs created within the last N months; 0 = no time bound\n"
+        "# (override with --since-months).\n"
+        f"since_months = {DEFAULT_SINCE_MONTHS}\n"
     )
 
 
@@ -109,4 +114,14 @@ def _config_from_dict(data: dict[str, Any], source: Path) -> Config:
     if isinstance(limit, bool) or not isinstance(limit, int):
         raise ConfigError(f"{source}: 'limit' must be an integer")
 
-    return Config(teammates=list(teammates), reviewer=reviewer, repo=repo, limit=limit)
+    since_months = data.get("since_months", DEFAULT_SINCE_MONTHS)
+    if isinstance(since_months, bool) or not isinstance(since_months, int) or since_months < 0:
+        raise ConfigError(f"{source}: 'since_months' must be a non-negative integer (0 = no bound)")
+
+    return Config(
+        teammates=list(teammates),
+        reviewer=reviewer,
+        repo=repo,
+        limit=limit,
+        since_months=since_months,
+    )
