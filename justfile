@@ -51,9 +51,14 @@ check:
 install:
     uv tool install .
 
-# Reinstall the global tool after code changes (use --editable for a live link)
+# Reinstall the global tool after code changes. --reinstall forces a rebuild;
+# --force alone reuses uv's cached wheel because the version never changes.
 reinstall:
-    uv tool install --force .
+    uv tool install --force --reinstall .
+
+# Install with a live link to the source — no reinstall needed after .py edits
+develop:
+    uv tool install --force --editable .
 
 # Remove the global tool
 uninstall:
