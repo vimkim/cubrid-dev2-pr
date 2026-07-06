@@ -27,6 +27,7 @@ class ReviewRequest:
     """
 
     name: str
+    typename: str | None = None
 
 
 @dataclass(frozen=True)

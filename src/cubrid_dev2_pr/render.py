@@ -40,6 +40,11 @@ def review_style(label: str) -> str:
     return _REVIEW_STYLES.get(label, "")
 
 
+def request_style(is_requested: bool) -> str:
+    """Pick a color for a requested-to-me cell."""
+    return "yellow" if is_requested else "dim"
+
+
 def build_table(prs: list[PullRequest], reviewer: str) -> Table:
     """Build the colored Rich table for the given PRs."""
     table = Table(box=box.SIMPLE_HEAVY, header_style="bold", expand=False)
@@ -47,6 +52,7 @@ def build_table(prs: list[PullRequest], reviewer: str) -> Table:
     table.add_column("AUTHOR", no_wrap=True)
     table.add_column("OPENED", no_wrap=True)
     table.add_column("APPROVALS", justify="right", no_wrap=True)
+    table.add_column("REQUESTED", no_wrap=True)
     table.add_column("MY REVIEW", no_wrap=True)
     # The URL rides on a dim second line under the title (like the prototype),
     # so the fixed columns above are never squeezed by a greedy URL column.
@@ -54,6 +60,7 @@ def build_table(prs: list[PullRequest], reviewer: str) -> Table:
 
     for pr in prs:
         approved, pool = review.approval_stats(pr)
+        is_requested = review.is_requested_to(pr, reviewer)
         label = review.review_label(pr, reviewer)
         title = ("[DRAFT] " if pr.is_draft else "") + pr.title
         title_cell = Text(title)
@@ -64,6 +71,7 @@ def build_table(prs: list[PullRequest], reviewer: str) -> Table:
             Text(pr.author_login),
             Text(pr.created_at[:10]),
             Text(f"{approved}/{pool}", style=ratio_style(approved, pool)),
+            Text("yes" if is_requested else "-", style=request_style(is_requested)),
             Text(label, style=review_style(label)),
             title_cell,
         )

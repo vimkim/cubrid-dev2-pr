@@ -40,9 +40,10 @@ class PrListApp(App[None]):
         table = self.query_one(DataTable)
         table.cursor_type = "row"
         table.zebra_stripes = True
-        table.add_columns("PR", "AUTHOR", "OPENED", "APPROVALS", "MY REVIEW", "TITLE")
+        table.add_columns("PR", "AUTHOR", "OPENED", "APPROVALS", "REQUESTED", "MY REVIEW", "TITLE")
         for pr in self._prs:
             approved, pool = review.approval_stats(pr)
+            is_requested = review.is_requested_to(pr, self._reviewer)
             label = review.review_label(pr, self._reviewer)
             title = ("[DRAFT] " if pr.is_draft else "") + pr.title
             table.add_row(
@@ -50,6 +51,7 @@ class PrListApp(App[None]):
                 Text(pr.author_login),
                 Text(pr.created_at[:10]),
                 Text(f"{approved}/{pool}", style=render.ratio_style(approved, pool)),
+                Text("yes" if is_requested else "-", style=render.request_style(is_requested)),
                 Text(label, style=render.review_style(label)),
                 Text(title),
                 key=str(pr.number),

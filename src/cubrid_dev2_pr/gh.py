@@ -142,5 +142,16 @@ def _parse_requests(raw: Any) -> list[ReviewRequest]:
         name = item.get("login") or item.get("slug") or item.get("name")
         if not name:
             continue
-        requests.append(ReviewRequest(name=str(name)))
+        typename = item.get("__typename")
+        if typename is None:
+            if item.get("login"):
+                typename = "User"
+            elif item.get("slug"):
+                typename = "Team"
+        requests.append(
+            ReviewRequest(
+                name=str(name),
+                typename=str(typename) if typename is not None else None,
+            )
+        )
     return requests

@@ -1,8 +1,8 @@
 # cubrid-dev2-pr
 
 A CLI/TUI for tracking open pull requests in `CUBRID/cubrid` from the dev2
-teammate set — with approval progress, your own review state, opened date, and a
-drill-down detail view.
+teammate set — with approval progress, direct review-request state, your own
+review state, opened date, and a drill-down detail view.
 
 It uses the GitHub CLI (`gh`) as its data source, so authentication and host
 config stay outside this tool.
@@ -69,6 +69,10 @@ The **MY REVIEW** column shows your own latest review state per PR — `APPROVED
 `CHANGES_REQUESTED`, `commented only`, `not reviewed`, or `self-authored` (your
 own PR). Choose whose review this tracks with `--reviewer` or the `reviewer`
 config key.
+
+The **REQUESTED** column shows `yes` when the PR has an outstanding direct user
+review request for the configured reviewer. Team requests are not counted as
+requested to you specifically.
 
 ## Configuration
 

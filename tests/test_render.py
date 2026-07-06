@@ -30,9 +30,22 @@ def test_render_includes_pr_rows() -> None:
     out = _plain(prs, "vimkim")
     assert "#5001" in out
     assert "1/5" in out  # approval ratio
+    assert "REQUESTED" in out
     assert "APPROVED" in out  # vimkim's review label on #5001
     assert "overflow" in out  # part of the PR title
     assert "pull/5001" in out  # raw URL on its own line under the title
+
+
+def test_render_marks_direct_review_request_to_me() -> None:
+    prs = [gh.parse_pr(o) for o in _load("pr_list_sample.json")]
+    out = _plain(prs[:1], "H2SU")
+    assert "yes" in out
+
+
+def test_render_does_not_mark_team_request_as_me() -> None:
+    prs = [gh.parse_pr(o) for o in _load("pr_list_sample.json")]
+    out = _plain(prs[:1], "storage-team")
+    assert "yes" not in out
 
 
 def test_render_marks_draft_titles() -> None:

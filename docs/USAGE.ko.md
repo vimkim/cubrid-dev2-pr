@@ -1,7 +1,8 @@
 # cubrid-dev2-pr 사용 가이드 (팀원용)
 
-CUBRID dev2 팀원들이 올린 **열려 있는 PR 목록**과 승인 현황, 그리고 **내 리뷰 상태**를
-한눈에 보여주는 CLI/TUI 도구입니다. 데이터는 모두 `gh`(GitHub CLI)를 통해 가져옵니다.
+CUBRID dev2 팀원들이 올린 **열려 있는 PR 목록**과 승인 현황, **나에게 직접 요청된 리뷰**,
+그리고 **내 리뷰 상태**를 한눈에 보여주는 CLI/TUI 도구입니다. 데이터는 모두 `gh`(GitHub
+CLI)를 통해 가져옵니다.
 
 ## 1. 사전 준비물
 
@@ -76,7 +77,10 @@ cubrid-dev2-pr --limit 50          # 가져올 개수 제한
 cubrid-dev2-pr --tui               # 대화형 TUI 실행
 ```
 
-표 컬럼: PR 번호 · 작성자 · 생성일 · 승인 현황(예: `3/9`) · 내 리뷰 상태 · 제목 · URL
+표 컬럼: PR 번호 · 작성자 · 생성일 · 승인 현황(예: `3/9`) · 직접 요청 여부 · 내 리뷰 상태 · 제목 · URL
+
+`REQUESTED` 컬럼은 설정된 `reviewer` 계정에 직접 남아 있는 리뷰 요청이면 `yes` 로 표시합니다.
+팀 요청은 "나에게 직접" 요청된 것으로 보지 않습니다.
 
 **색상 의미**
 - 초록 `APPROVED` / 빨강 `CHANGES_REQUESTED` / 노랑·흐림 `commented only`·`not reviewed` / 청록 `self-authored`

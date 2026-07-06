@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from textual.coordinate import Coordinate
 from textual.widgets import DataTable
 
 from cubrid_dev2_pr import gh
@@ -27,6 +28,13 @@ async def test_list_populates_all_rows() -> None:
     async with app.run_test():
         table = app.query_one(DataTable)
         assert table.row_count == 2
+
+
+async def test_list_marks_direct_review_request_to_me() -> None:
+    app = PrListApp(_prs(), "CUBRID/cubrid", "H2SU")
+    async with app.run_test():
+        table = app.query_one(DataTable)
+        assert str(table.get_cell_at(Coordinate(0, 4))) == "yes"
 
 
 async def test_enter_opens_detail_screen() -> None:

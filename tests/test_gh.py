@@ -49,8 +49,31 @@ def test_parse_reviews_preserves_each_review() -> None:
 def test_review_request_normalizes_login_then_slug() -> None:
     pr = gh.parse_pr(_load("pr_list_sample.json")[0])
     names = [req.name for req in pr.review_requests]
+    typenames = [req.typename for req in pr.review_requests]
     # user -> login; team -> slug (preferred over the display name)
     assert names == ["H2SU", "storage-team"]
+    assert typenames == ["User", "Team"]
+
+
+def test_review_request_infers_type_when_typename_is_missing() -> None:
+    pr = gh.parse_pr(
+        {
+            "number": 1,
+            "title": "t",
+            "url": "u",
+            "author": {"login": "a"},
+            "isDraft": False,
+            "createdAt": "2026-01-01T00:00:00Z",
+            "reviewRequests": [
+                {"login": "alice"},
+                {"slug": "storage-team", "name": "Storage Team"},
+            ],
+        }
+    )
+    assert [(req.name, req.typename) for req in pr.review_requests] == [
+        ("alice", "User"),
+        ("storage-team", "Team"),
+    ]
 
 
 def test_parse_skips_reviews_without_author() -> None:

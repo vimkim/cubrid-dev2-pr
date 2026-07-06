@@ -67,6 +67,15 @@ def reviewer_groups(pr: PullRequest) -> dict[str, list[str]]:
     }
 
 
+def is_requested_to(pr: PullRequest, reviewer: str) -> bool:
+    """Return whether this PR has an outstanding direct request to ``reviewer``.
+
+    Team requests are intentionally excluded: this answers whether GitHub asked
+    the configured reviewer account specifically.
+    """
+    return any(req.name == reviewer and req.typename == "User" for req in pr.review_requests)
+
+
 def review_label(pr: PullRequest, reviewer: str) -> str:
     """Return the configured reviewer's my-review label.
 

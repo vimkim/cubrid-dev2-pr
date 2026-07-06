@@ -111,6 +111,17 @@ def test_reviewer_groups_partition() -> None:
     assert groups["awaiting"] == ["dave"]
 
 
+def test_is_requested_to_detects_direct_user_request() -> None:
+    pr = _pr(review_requests=[ReviewRequest("alice", typename="User")])
+    assert review.is_requested_to(pr, "alice") is True
+    assert review.is_requested_to(pr, "bob") is False
+
+
+def test_is_requested_to_ignores_team_request() -> None:
+    pr = _pr(review_requests=[ReviewRequest("storage-team", typename="Team")])
+    assert review.is_requested_to(pr, "storage-team") is False
+
+
 def test_latest_reviews_by_author_dedupes() -> None:
     pr = _pr(
         latest_reviews=[
