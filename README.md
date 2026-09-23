@@ -40,8 +40,16 @@ cubrid-dev2-pr --reviewer vimkim
 cubrid-dev2-pr --limit 300
 cubrid-dev2-pr --since-months 6     # only PRs opened in the last 6 months
 cubrid-dev2-pr --since-months 0     # no time bound (all open PRs)
+cubrid-dev2-pr --requested-only     # only direct requests to the configured reviewer
+cubrid-dev2-pr --json               # stable machine-readable rows
+cubrid-dev2-pr --json --requested-only
 cubrid-dev2-pr --tui                # interactive Textual UI
 ```
+
+`--requested-only` composes with the table, TUI, and JSON modes. `--json`
+emits an array with PR identity and display fields, approval counts, direct
+request state, and the configured reviewer's current review state. JSON and
+TUI modes are mutually exclusive.
 
 In the **TUI**: ↑/↓ move the row cursor, Enter opens the PR detail (with the
 body rendered as markdown, fetched on demand), Esc returns to the list, `q` or

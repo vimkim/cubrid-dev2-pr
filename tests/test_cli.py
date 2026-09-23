@@ -108,3 +108,63 @@ def test_gh_error_exits_nonzero(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(gh, "ensure_gh_available", _boom)
     result = runner.invoke(cli.app, [])
     assert result.exit_code == 1
+
+
+def test_json_requested_only_emits_stable_machine_rows(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    cfg = config.Config(teammates=["hgryoo", "vimkim"], reviewer="H2SU")
+    _stub_backend(monkeypatch, [], cfg=cfg)
+
+    result = runner.invoke(cli.app, ["--json", "--requested-only"])
+
+    assert result.exit_code == 0
+    assert json.loads(result.output) == [
+        {
+            "number": 5001,
+            "title": "Fix overflow in heap record replace",
+            "url": "https://github.com/CUBRID/cubrid/pull/5001",
+            "author_login": "hgryoo",
+            "created_at": "2026-06-20T01:02:03Z",
+            "is_draft": False,
+            "approved_count": 1,
+            "reviewer_pool_count": 5,
+            "requested": True,
+            "review_state": "not reviewed",
+        }
+    ]
+
+
+def test_requested_only_filters_human_table(monkeypatch: pytest.MonkeyPatch) -> None:
+    cfg = config.Config(teammates=["hgryoo", "vimkim"], reviewer="H2SU")
+    _stub_backend(monkeypatch, [], cfg=cfg)
+
+    result = runner.invoke(cli.app, ["--requested-only"])
+
+    assert result.exit_code == 0
+    assert "#5001" in result.output
+    assert "#5002" not in result.output
+    assert "requested only" in result.output
+
+
+def test_requested_only_empty_states(monkeypatch: pytest.MonkeyPatch) -> None:
+    cfg = config.Config(teammates=["hgryoo"], reviewer="vimkim")
+    _stub_backend(monkeypatch, [], cfg=cfg)
+
+    table = runner.invoke(cli.app, ["--requested-only"])
+    json_result = runner.invoke(cli.app, ["--json", "--requested-only"])
+    tui = runner.invoke(cli.app, ["--tui", "--requested-only"])
+
+    assert table.exit_code == 0
+    assert "No open PRs directly request review from vimkim." in table.output
+    assert json_result.exit_code == 0
+    assert json.loads(json_result.output) == []
+    assert tui.exit_code == 0
+    assert "No open PRs directly request review from vimkim." in tui.output
+
+
+def test_json_and_tui_are_mutually_exclusive() -> None:
+    result = runner.invoke(cli.app, ["--json", "--tui"])
+
+    assert result.exit_code == 2
+    assert "--json cannot be combined with --tui" in result.output

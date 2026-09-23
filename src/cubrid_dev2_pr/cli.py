@@ -7,13 +7,16 @@ values (a ``None`` default marks a flag as "not passed").
 
 from __future__ import annotations
 
+import json
 from datetime import date
+from typing import Any
 
 import typer
 from rich.console import Console
 from rich.text import Text
 
-from cubrid_dev2_pr import __version__, config, gh, render
+from cubrid_dev2_pr import __version__, config, gh, render, review
+from cubrid_dev2_pr.models import PullRequest
 
 app = typer.Typer(
     add_completion=False,
@@ -25,6 +28,23 @@ def _version_callback(value: bool) -> None:
     if value:
         Console().print(f"cubrid-dev2-pr {__version__}")
         raise typer.Exit()
+
+
+def _json_record(pr: PullRequest, reviewer: str) -> dict[str, Any]:
+    """Build one stable machine-readable row from the displayed PR model."""
+    approved, pool = review.approval_stats(pr)
+    return {
+        "number": pr.number,
+        "title": pr.title,
+        "url": pr.url,
+        "author_login": pr.author_login,
+        "created_at": pr.created_at,
+        "is_draft": pr.is_draft,
+        "approved_count": approved,
+        "reviewer_pool_count": pool,
+        "requested": review.is_requested_to(pr, reviewer),
+        "review_state": review.review_label(pr, reviewer),
+    }
 
 
 @app.callback(invoke_without_command=True)
@@ -41,6 +61,12 @@ def main(
     ),
     drafts: bool = typer.Option(False, "--drafts", "--include-drafts", help="Include draft PRs."),
     tui: bool = typer.Option(False, "--tui", help="Launch the interactive TUI."),
+    json_output: bool = typer.Option(False, "--json", help="Emit machine-readable JSON."),
+    requested_only: bool = typer.Option(
+        False,
+        "--requested-only",
+        help="Only include PRs directly requesting review from the configured reviewer.",
+    ),
     version: bool = typer.Option(
         False,
         "--version",
@@ -50,6 +76,9 @@ def main(
     ),
 ) -> None:
     """List open PRs from configured teammates (default), or launch the TUI."""
+    if json_output and tui:
+        raise typer.BadParameter("--json cannot be combined with --tui")
+
     out = Console()
     err = Console(stderr=True)
 
@@ -72,6 +101,22 @@ def main(
     if not drafts:
         prs = [pr for pr in prs if not pr.is_draft]
     prs.sort(key=lambda pr: pr.created_at, reverse=True)
+    if requested_only:
+        prs = [pr for pr in prs if review.is_requested_to(pr, reviewer_v)]
+
+    if json_output:
+        typer.echo(
+            json.dumps(
+                [_json_record(pr, reviewer_v) for pr in prs],
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return
+
+    if requested_only and not prs:
+        out.print(f"No open PRs directly request review from {reviewer_v}.")
+        return
 
     if tui:
         from cubrid_dev2_pr.tui.app import run_tui
@@ -84,6 +129,8 @@ def main(
         header += f"  (since {created_since})"
     if not drafts:
         header += "  (drafts hidden; use --drafts)"
+    if requested_only:
+        header += "  (requested only)"
     out.print(header)
     render.render(prs, reviewer_v, console=out)
 
